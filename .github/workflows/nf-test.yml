@@ -28,4 +28,7 @@ jobs:
     - uses: nf-core/setup-nextflow@v1
     - name: Test Nextflow pipeline
       run: |
+        set -x
+        export UID=$(id -u)
+        export GID=$(id -g)
         bash test/run-tests.sh gh
