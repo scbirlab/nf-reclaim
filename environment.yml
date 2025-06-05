@@ -1,0 +1,15 @@
+name: nf-reclaim
+
+channels:
+    - conda-forge
+    - bioconda
+
+dependencies:
+    - python==3.12
+    - pip
+    - conda-forge::jq
+    - conda-forge::rdkit
+    - bioconda::diamond
+    - pip:
+        - "schemist>=0.0.4.post1"
+        
