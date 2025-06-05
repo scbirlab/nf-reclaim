@@ -4,7 +4,7 @@
 ========================================================================================
    Gene-gene interaction predicting Nextflow Workflow
 ========================================================================================
-   Github   : https://github.com/scbirlab/nf-ggi
+   Github   : https://github.com/scbirlab/nf-reclaim
    Contact  : Eachan Johnson <eachan.johnson@crick.ac.uk>
 ----------------------------------------------------------------------------------------
 */
@@ -12,10 +12,10 @@
 nextflow.enable.dsl=2
 
 pipeline_title = """\
-   S C B I R   G E N E - G E N E   I N T E R A C T I O N   P R E D I C T I O N   P I P E L I N E
-   =============================================================================================
-   Nextflow pipeline to predict gene-gene interactions based on protein-protein interaction 
-   predictions and similar metabolites.
+   R E C L A I M   P I P E L I N E
+   ========================================================================================
+   Nextflow pipeline to identify orthologs that have purchasable inhibitors.
+   
    """
    .stripIndent()
 
