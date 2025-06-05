@@ -7,8 +7,10 @@ channels:
 dependencies:
     - python==3.12
     - pip
+    - conda-forge::ca-certificates
+    - conda-forge::curl
     - conda-forge::jq
-    - conda-forge::rdkit
+    - conda-forge::wget
     - bioconda::diamond
     - pip:
         - "schemist>=0.0.4.post1"

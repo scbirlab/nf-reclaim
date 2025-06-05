@@ -7,9 +7,6 @@ WORKDIR $HOME
 USER root
 RUN mkdir -p $HOME/.conda && chown -R 1000:1000 $HOME
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    wget \
-    ca-certificates \
     build-essential \
     gcc \
     g++ \
