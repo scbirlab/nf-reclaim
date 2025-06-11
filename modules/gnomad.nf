@@ -16,7 +16,7 @@ process fetch_gnomad_constraints {
 
     script:
     """
-    wget https://storage.googleapis.com/gcp-public-data--gnomad/release/${version}/constraint/gnomad.v${version}.constraint_metrics.tsv
+    curl https://storage.googleapis.com/gcp-public-data--gnomad/release/${version}/constraint/gnomad.v${version}.constraint_metrics.tsv > gnomad.v${version}.constraint_metrics.tsv
 
     python -c '
     import pandas as pd
