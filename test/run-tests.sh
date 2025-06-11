@@ -8,6 +8,7 @@ script_dir="$(dirname $0)"
 if [ "$GITHUB" == "gh" ]
 then
     export NXF_CONTAINER_ENGINE=docker
+    export NXF_DOCKER_OPTS="-u $(id -u):$(id -g)"
     docker_flag='-profile gh'
 else
     export SINGULARITY_FAKEROOT=1
