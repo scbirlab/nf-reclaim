@@ -31,8 +31,8 @@ process fetch_fastas_from_organism_id {
       fi
    done
 
-   wget "https://rest.uniprot.org/uniprotkb/stream?query=(proteome:\$PROTEOME_ID)&format=fasta&download=true&compressed=true" \
-      -O proteome.fasta.gz \
+   (curl "https://rest.uniprot.org/uniprotkb/stream?query=(proteome:\$PROTEOME_ID)&format=fasta&download=true&compressed=true" \
+      > proteome.fasta.gz) \
       || (
          echo "Failed to download taxonomy ID ${organism_id} with proteome ID \$PROTEOME_ID from UniProt"
          exit 1   
