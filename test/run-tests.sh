@@ -24,6 +24,6 @@ nextflow run "$script_dir"/.. \
 
 # Examples with sample sheet
 cd "$script_dir"/sheet
-nextflow run ../../.. \
+nextflow run ../.. \
     -resume $docker_flag \
     --test
