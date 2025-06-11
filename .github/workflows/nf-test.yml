@@ -29,6 +29,6 @@ jobs:
     - name: Test Nextflow pipeline
       run: |
         set -x
-        export UID=$(id -u)
-        export GID=$(id -g)
+        echo "UID=$UID, GID=$GID"
         bash test/run-tests.sh gh
+        
