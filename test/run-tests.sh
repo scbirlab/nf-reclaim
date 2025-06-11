@@ -23,10 +23,7 @@ nextflow run "$script_dir"/.. \
     --organism_id 83332
 
 # Examples with sample sheet
-nextflow run "$script_dir"/.. \
+cd "$script_dir"/sheet
+nextflow run "$script_dir"/../.. \
     -resume $docker_flag \
-    --test \
-    -c nextflow.config \
-    --sample_sheet inputs/sample-sheet.csv \
-    --inputs inputs \
-    --outputs output-sample-sheet
+    --test
