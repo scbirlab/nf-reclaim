@@ -153,18 +153,23 @@ workflow {
    fetch_gnomad_constraints(
       Channel.of( params.gnomad_version ),
    )
-   fetch_chembl_tox(
-      Channel.of( params.chembl_url ),
-      Channel.value( params.tox_cell_lines ),
-      chembl_version,
-   )
 
-   merge_tox_gnomad(
-      fetch_chembl_targets.out,
-      fetch_chembl_tox.out,
-      fetch_gnomad_constraints.out,
-      Channel.value( "inner" ),
-   )
+   if ( !params.test ) {
+
+      fetch_chembl_tox(
+         Channel.of( params.chembl_url ),
+         Channel.value( params.tox_cell_lines ),
+         chembl_version,
+      )
+
+      merge_tox_gnomad(
+         fetch_chembl_targets.out,
+         fetch_chembl_tox.out,
+         fetch_gnomad_constraints.out,
+         Channel.value( "inner" ),
+      )
+      
+   }
 
    fetch_included_chembl_taxon.out
       .combine( fetch_chembl_targets.out )
